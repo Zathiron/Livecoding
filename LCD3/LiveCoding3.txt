@@ -1,0 +1,39 @@
+Jorge Nichols 5/6
+
+import java.util.Scanner;
+
+class MangosNaranjas {
+    private int mangos;
+    private int naranjas;
+
+    public MangosNaranjas(int mangos, int naranjas) {
+        this.mangos = mangos;
+        this.naranjas = naranjas;
+    }
+
+    public void imprimir() {
+        int menor = Math.min(mangos, naranjas);
+        int cajas = 1;
+        while (cajas <= menor && (mangos % cajas != 0 || naranjas % cajas != 0)) {
+            cajas++;
+        }
+        cajas--;
+        int mangosPorCaja = mangos / cajas;
+        int naranjasPorCaja = naranjas / cajas;
+        System.out.println("El número de cajas es: " + cajas);
+        System.out.println("El número de mangos en una caja es: " + mangosPorCaja);
+        System.out.println("El número de naranjas en una caja es: " + naranjasPorCaja);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Ingrese el número de mangos y naranjas separados por un espacio:");
+        int mangos = scanner.nextInt();
+        int naranjas = scanner.nextInt();
+        MangosNaranjas mn = new MangosNaranjas(mangos, naranjas);
+        mn.imprimir();
+        scanner.close();
+    }
+}

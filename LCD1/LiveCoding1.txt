@@ -1,0 +1,23 @@
+Jorge Nichols
+
+Parte 1 funcion big word
+
+function bigWords(inputStr, inputArray) {
+    return inputArray.filter(word => word.length > inputStr.length);
+}
+
+// Ejemplo de uso:
+const myArray = ['insecto', 'bootcamp', 'mangos', 'reptil', 'mosca', 'escritorio'];
+const resultArray = bigWords('bocina', myArray);
+console.log(resultArray); // Output: ['insecto', 'bootcamp', 'escritorio']
+
+Parte 2 funcion print array
+
+function printArray(inputArray) {
+    const listElement = document.getElementById('myList');
+    inputArray.forEach(word => {
+        const listItem = document.createElement('li');
+        listItem.textContent = word;
+        listElement.appendChild(listItem);
+    });
+}

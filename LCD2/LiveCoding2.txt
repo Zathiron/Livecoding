@@ -1,0 +1,18 @@
+Jorge Nichols 
+
+
+function fetchAnswer() {
+    fetch('https://yesno.wtf/api')
+        .then(response => response.json())
+        .then(data => {
+            const answerElement = document.getElementById('answer');
+            answerElement.textContent = data.answer;
+            setTimeout(() => {
+                answerElement.textContent = '';
+            }, 5000); // 5000 milisegundos = 5 segundos
+        })
+        .catch(error => console.error('Error fetching answer:', error));
+}
+
+const button = document.getElementById('fetchButton');
+button.addEventListener('click', fetchAnswer);
